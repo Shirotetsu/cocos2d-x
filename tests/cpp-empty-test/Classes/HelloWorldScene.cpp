@@ -27,7 +27,7 @@ bool HelloWorld::init()
     bestScore = UserDefault::getInstance()->getIntegerForKey("BEST_SCORE", 0);
 
     // Player shadow
-    auto player = Sprite::create("shadow.png");
+    auto player = Sprite::create("shadowSide.png");
     player->setPosition(Vec2(origin.x + player->getContentSize().width / 2,
         origin.y + visibleSize.height / 2));
     auto playerBody = PhysicsBody::createBox(player->getContentSize());
