@@ -18,14 +18,15 @@ bool AppDelegate::applicationDidFinishLaunching() {
     auto glview = director->getOpenGLView();
     if (!glview) {
         glview = GLViewImpl::create("Hello World");
-        glview->setFrameSize(640, 480);
+        glview->setFrameSize(960, 720);
         director->setOpenGLView(glview);
     }
 
-    //auto scene = HelloWorld::createScene();
+    auto helloWorld = HelloWorld::createScene();
     auto graphicsScene = GraphicsScene::createScene();
     auto touchScene = TouchScene::createScene();
-    director->runWithScene(touchScene);
+
+    director->runWithScene(helloWorld);
 
     return true;
 }
